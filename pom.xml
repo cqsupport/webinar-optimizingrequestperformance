@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- ====================================================================== -->
+    <!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
+    <!-- ====================================================================== -->
+
+    <groupId>com.adobe.cso.tests</groupId>
+    <artifactId>cq-tests-performance</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>CQ tests-performance - Reactor Project</name>
+    <description>Maven Multimodule project for tests-performance.</description>
+
+    <!-- ====================================================================== -->
+    <!-- P R O P E R T I E S -->
+    <!-- ====================================================================== -->
+    <properties>
+        <crx.host>localhost</crx.host>
+        <crx.port>4502</crx.port>
+        <slf4j.version>1.6.6</slf4j.version>
+        <junit.version>4.8.1</junit.version>
+        
+		<cqcommons.version>5.5.0</cqcommons.version>
+		<cqwcm.version>5.5.0</cqwcm.version>
+		<slingapi.version>2.2.4</slingapi.version>
+        
+        <logback.version>1.0.6</logback.version>
+        <commonslang3.version>3.0</commonslang3.version>
+        <ioutils.version>2.4</ioutils.version>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-scr-plugin</artifactId>
+                    <version>1.7.4</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>2.3.6</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <!-- use version 2.3.2 to have java 1.5 as the default -->
+                    <version>2.3.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.sling</groupId>
+                    <artifactId>maven-sling-plugin</artifactId>
+                    <version>2.0.6</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.day.jcr.vault</groupId>
+                    <artifactId>content-package-maven-plugin</artifactId>
+                    <version>0.0.13</version>
+                </plugin>
+                <!--This plugin's configuration is used to store Eclipse
+                    m2e settings only. It has no influence on the Maven build itself. -->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>
+                                            org.apache.felix
+                                        </groupId>
+                                        <artifactId>
+                                            maven-scr-plugin
+                                        </artifactId>
+                                        <versionRange>
+                                            [1.0.0,)
+                                        </versionRange>
+                                        <goals>
+                                            <goal>scr</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.core</artifactId>
+                <version>4.2.0</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.compendium</artifactId>
+                <version>4.2.0</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.apache.felix.scr.annotations</artifactId>
+                <version>1.6.0</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            
+			<dependency>
+				<groupId>javax.jcr</groupId>
+				<artifactId>jcr</artifactId>
+				<version>2.0</version>
+			</dependency>
+            
+			<dependency> 
+				<groupId>com.day.cq.wcm</groupId>
+				<artifactId>cq-wcm-api</artifactId> 
+				<version>${cqwcm.version}</version> 
+			</dependency>
+			<dependency> 
+				<groupId>com.day.cq</groupId> 
+				<artifactId>cq-commons</artifactId> 
+				<version>${cqcommons.version}</version> 
+			</dependency> 
+			<dependency> 
+				<groupId>org.apache.sling</groupId>
+				<artifactId>org.apache.sling.api</artifactId> 
+				<version>${slingapi.version}</version>
+			</dependency> 
+            
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-access</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commonslang3.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${ioutils.version}</version>
+			</dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>autoInstallBundle</id>
+			<activation>
+				<property>
+					<name>autoInstallBundle</name>
+				</property>
+			</activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.sling</groupId>
+                        <artifactId>maven-sling-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>install-bundle</id>
+                                <goals>
+                                    <goal>install</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    
+  <modules>
+    <module>bundle</module>
+    <module>content</module>
+  </modules>
+</project>

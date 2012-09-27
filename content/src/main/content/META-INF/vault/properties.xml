@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>FileVault Package Properties</comment>
+<entry key="buildCount">1</entry>
+<entry key="version">1.0-SNAPSHOT</entry>
+<entry key="dependencies" />
+<entry key="packageFormatVersion">2</entry>
+<entry key="description">thirdpartycallcontention Package</entry>
+<entry key="group">com.adobe.cso.tests</entry>
+<entry key="name">cq-third-party-call-contention-content</entry>
+<entry key="path">/etc/packages/com.adobe.cso.tests/cq-third-party-call-contention-content-1.0-SNAPSHOT.zip</entry>
+</properties>
