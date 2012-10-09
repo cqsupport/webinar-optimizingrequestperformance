@@ -21,7 +21,8 @@ target/
 *.class
 
 # Package Files #
-*.jar
+bundle/*.jar
+content/*.jar
 *.war
 *.ear
 
@@ -42,14 +43,14 @@ target/
 *.dmg
 *.gz
 *.iso
-*.jar
 *.rar
 *.tar
 *.zip
 
 # Logs and databases #
 ######################
-*.log
+bundle/*.log
+content/*.log
 *.sql
 *.sqlite
 
