@@ -1,6 +1,5 @@
 package com.adobe.cso.tests.impl.domain.media;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;

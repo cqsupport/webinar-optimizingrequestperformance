@@ -11,6 +11,4 @@ public interface CustomerDataDeduplicaterService {
 	InputStream getDataInputStream();
 	
 	Set<Customer> parse() throws Exception;
-
-	String getCustomerDataContentLocation();
 }

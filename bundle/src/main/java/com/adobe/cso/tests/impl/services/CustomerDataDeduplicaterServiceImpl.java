@@ -12,7 +12,6 @@ import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Modified;
-import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Service;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
@@ -27,18 +26,7 @@ import com.adobe.cso.tests.impl.domain.crm.CustomerImpl;
 public class CustomerDataDeduplicaterServiceImpl implements CustomerDataDeduplicaterService {
     private static Logger logger = LoggerFactory.getLogger(CustomerDataDeduplicaterServiceImpl.class);
     
-    private Map<String, Object> props;
-    
-    public static String CUSTOMER_DATA_CONTENT_LOCATION_NAME = "customer.data.content.location";
-    
-    public static String CUSTOMER_DATA_CONTENT_LOCATION_DEFAULT = "/content/tests-performance/data/csv/customers-dump-all.csv";
-    
     private InputStream dataInputStream;
-    
-    @Property(
-            name = "customer.data.content.location",
-            description = "This is the location in the repository, to the CSV containing the customer data to analyze")
-    protected String customerDataContentLocation = "";
     
     @Activate
     protected void activate(final Map<String, Object> props) {
@@ -50,18 +38,11 @@ public class CustomerDataDeduplicaterServiceImpl implements CustomerDataDeduplic
     protected void update(final Map<String, Object> props)
     {
     	logger.info("Modifying ...");
-        this.props = props;
-        
-        String propsValue = (String) this.props.get(CUSTOMER_DATA_CONTENT_LOCATION_NAME);
-        customerDataContentLocation = propsValue == null ? CUSTOMER_DATA_CONTENT_LOCATION_DEFAULT : propsValue;
     }
     
     @Deactivate
     protected void deactivate(ComponentContext ctx) {
     	logger.info("Deactivating ...");
-    	
-        this.props = null;
-        customerDataContentLocation = null;
     }
 
 	public void setDataInputStream(InputStream dataInputStream) {
@@ -113,9 +94,5 @@ public class CustomerDataDeduplicaterServiceImpl implements CustomerDataDeduplic
 		logger.info(".......... Finished parse of the customer data  ");
 		
 		return customers;
-	}
-
-	public String getCustomerDataContentLocation() {
-		return customerDataContentLocation;
 	}
 }
