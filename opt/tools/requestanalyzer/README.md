@@ -17,7 +17,7 @@ See for full installation details, [Sling Request Analyzer].
 
 When used as a java application as in the following, it allows you to inspect the requesttracker.txt file.
 
-  $ java -jar org.apache.sling.reqanalyzer-0.0.1-R1352779.jar <filename>
+  $ java -jar org.apache.sling.reqanalyzer-0.0.1-R1352779.jar `<filename>`
 
 
 [Sling Request Analyzer]: http://sling.staging.apache.org/documentation/bundles/request-analysis.html
