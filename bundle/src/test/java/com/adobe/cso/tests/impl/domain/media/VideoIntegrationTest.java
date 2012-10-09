@@ -66,16 +66,6 @@ public class VideoIntegrationTest {
 		video.doBackUp(outputStream);
 	}
 	
-	@Test(expected=IllegalArgumentException.class)
-	public void testBackUpFileLocationCannotWrite() throws IOException
-	{
-		inputStream = getClass().getClassLoader().getResourceAsStream(TEST_DATA_FILE);
-		outputStream = new FileOutputStream(new File("C:\\surelyicannotwritetoroot.txt"));
-		
-		video.setInputStream(inputStream);
-		video.doBackUp(outputStream);
-	}
-	
 	@Test
 	public void testBackUpFileLocationWrite() throws IOException
 	{
