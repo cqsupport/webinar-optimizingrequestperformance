@@ -3,6 +3,8 @@ CQ Performance Analysis: Optimizing Response Time
 
 **Sample code for the following webinar on Thursday, October 11, 2012.**
 
+**Note:** The sample code provided under the bundle and content directories is purposely developed to perform badly.  It is only intended for use in the demo.  Please do NOT use it as sample code for your own application development.
+
 Join Adobe experts for an exclusive Adobe CQ Webinar
 ------------------------------------
  
