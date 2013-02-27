@@ -8,6 +8,9 @@ CQ Performance Analysis: Optimizing Response Time
 ### Webinar Recording
 https://my.adobeconnect.com/_a295153/p89famp6peb?launcher=false&fcsContent=true&pbMode=normal
 
+### Presentation Slides
+https://github.com/cqsupport/webinar-optimizingrequestperformance/blob/master/var/presentation/CQ_Performance_Webinar_2012.pdf?raw=true
+
 Join Adobe experts for an exclusive Adobe CQ Webinar
 ------------------------------------
  
