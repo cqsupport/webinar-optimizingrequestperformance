@@ -34,3 +34,8 @@ This session is designed to educate -
 * CQ Administrators
 * CQ Web Ops Engineers
 * CQ Dev Ops Engineers
+
+
+### Related Documentation
+* Perforamnce FAQ - http://helpx.adobe.com/adobe-cq/using/performance-faq.html
+* CQ5 Performance - http://dev.day.com/docs/en/cq/current/deploying/performance.html
