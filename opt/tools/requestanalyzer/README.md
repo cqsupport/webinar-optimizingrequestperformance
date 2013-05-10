@@ -13,9 +13,15 @@ For the purpose of convenience, the compiled version (as of time of writing) tha
 Usage
 ------------------------------------
 
-See for full installation details, [Sling Request Analyzer].
+For full installation details, see [Sling Request Analyzer].
 
-When used as a java application as in the following, it allows you to inspect the requesttracker.txt file.
+Basic usage:
+
+1. Install the [org.apache.sling.reqanalyzer-0.0.1-SNAPSHOT.jar] as an OSGi bundle to the Apache Felix Web Console (/system/console)
+
+2. This will generate a file logs/requesttracker.txt
+
+3. The same jar installed in step 1 allows you to inspect the requesttracker.txt file when it is used as a standalone java app:
 
   $ java -jar org.apache.sling.reqanalyzer-0.0.1-R1352779.jar `<filename>`
 
@@ -23,3 +29,4 @@ When used as a java application as in the following, it allows you to inspect th
 [Sling Request Analyzer]: http://sling.staging.apache.org/documentation/bundles/request-analysis.html
 [Sling Request Analyzer Source Code]: http://svn.apache.org/viewvc/sling/trunk/contrib/extensions/reqanalyzer/
 [Sling Request Analyzer Temp Build]: org.apache.sling.reqanalyzer-0.0.1-SNAPSHOT.jar
+[org.apache.sling.reqanalyzer-0.0.1-SNAPSHOT.jar]: org.apache.sling.reqanalyzer-0.0.1-SNAPSHOT.jar
